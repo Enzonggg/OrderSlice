@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #d4a373;
+    --secondary: #faedcd;
+    --accent: #e9edc9;
+    --dark: #283618;
+    --light: #fefae0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glassmorphism */
+.glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+    background: rgba(40, 54, 24, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b5835a;
+}
+
+/* Hero Background Gradient */
+.hero-gradient {
+    background: linear-gradient(135deg, #faedcd 0%, #fefae0 100%);
+}
+
+/* Modal transition */
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.modal:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    transition: transform 0.3s ease;
+    transform: scale(0.95);
+}
+.modal:not(.hidden) .modal-content {
+    transform: scale(1);
+}
+
+/* Card hover */
+.cake-card {
+    transition: all 0.3s ease;
+}
+.cake-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.cake-card img {
+    transition: transform 0.5s ease;
+}
+.cake-card:hover img {
+    transform: scale(1.05);
+}
